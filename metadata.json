@@ -1,0 +1,6 @@
+{
+  "name": "Butterfly Motion Study",
+  "description": "A peaceful, uneven cursor-following butterfly animation in muted slate blue (#59789c) crafted for React presentation pinboards.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

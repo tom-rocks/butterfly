@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --paper-bg: #F6F5F1;
+    --paper-surface: rgba(253, 252, 249, 0.88);
+    --ink-primary: #243447;
+    --ink-muted: #5F748C;
+    --butterfly-blue: #59789c;
+    --butterfly-blue-deep: #435e7d;
+    --hairline: rgba(89, 120, 156, 0.16);
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--paper-bg);
+    color: var(--ink-primary);
+  }
+}
+
+.font-editorial {
+  font-family: 'Fraunces', Georgia, serif;
+}
+
+.font-mono-tabular {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Soft cotton watercolor paper surface */
+.paper-canvas {
+  background-color: #F6F5F1;
+  background-image:
+    radial-gradient(ellipse 80% 70% at 22% 18%, rgba(255, 255, 255, 0.72), transparent 65%),
+    radial-gradient(ellipse 75% 65% at 82% 84%, rgba(89, 120, 156, 0.05), transparent 60%);
+}
+
+/* Subtle SVG fractal paper grain overlay (static, zero repaint cost) */
+.paper-grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.036'/%3E%3C/svg%3E");
+}
+
+/* Optional subtle pinboard dot grid matching #59789c */
+.pinboard-grid {
+  background-image: radial-gradient(rgba(89, 120, 156, 0.22) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Clean custom range slider in #59789c */
+input[type='range'].studio-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 9999px;
+  background: rgba(89, 120, 156, 0.18);
+  outline: none;
+  cursor: pointer;
+}
+
+input[type='range'].studio-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  background: #59789c;
+  border: 2px solid #FDFCFA;
+  box-shadow: 0 1px 3px rgba(36, 52, 71, 0.22);
+  transition: transform 150ms cubic-bezier(0.16, 1, 0.3, 1), background-color 150ms ease;
+}
+
+input[type='range'].studio-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.12);
+  background: #466282;
+}
+
+input[type='range'].studio-slider:focus-visible::-webkit-slider-thumb {
+  box-shadow: 0 0 0 3px rgba(89, 120, 156, 0.28);
+}
+
+input[type='range'].studio-slider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  background: #59789c;
+  border: 2px solid #FDFCFA;
+  box-shadow: 0 1px 3px rgba(36, 52, 71, 0.22);
+  transition: transform 150ms cubic-bezier(0.16, 1, 0.3, 1), background-color 150ms ease;
+}
